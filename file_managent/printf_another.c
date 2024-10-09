@@ -1,22 +1,14 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    
-      FILE *file = fopen("example.txt", "w");
-       if (file == NULL) {
-        printf("Failed to open the file.\n");
-        return 0;
-    }
- 
+int main()
+{
+     char buff[100];
 
-    int num = 42;
-    double pi = 3.14159;
-    char str[] = "Hello, stdout!";
+     FILE *Fp = fopen("example.txt", "w");
 
-    fprintf(file, "Integer: %d\n", num);
-    
-    fprintf(file, "String: %s\n", str);
+     fgets(buff, sizeof(buff), stdin);
+     fputs(buff, Fp);
 
-    return 0;
+    fclose(Fp);
+
 }
-
